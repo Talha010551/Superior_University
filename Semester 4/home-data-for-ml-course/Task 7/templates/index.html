@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #a29bfe);
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+        input {
+            padding: 10px;
+            width: 70%;
+            border: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #0984e3;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #74b9ff;
+        }
+        .weather-info {
+            margin-top: 20px;
+        }
+        .icon {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌤 Weather App</h1>
+        <form method="get" action="/">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if weather %}
+        <div class="weather-info">
+            <h2>{{ weather.name }}</h2>
+            <img class="icon" src="https://openweathermap.org/img/wn/{{ weather.weather[0].icon }}@2x.png" alt="icon">
+            <p>Temperature: {{ weather.main.temp }} °C</p>
+            <p>Condition: {{ weather.weather[0].description }}</p>
+        </div>
+        {% else %}
+        <p>No weather data found. Please try again.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
