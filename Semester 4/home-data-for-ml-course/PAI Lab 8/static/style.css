@@ -1,0 +1,36 @@
+body {
+    background-color: #0c122b;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #11172e;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #2b4cff;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2b4cff;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #1d33a5;
+}
+
+#joke-box {
+    margin-top: 25px;
+}
